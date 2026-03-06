@@ -1,0 +1,122 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background: linear-gradient(#7dc8ff 0%, #f2b977 70%, #b37c5a 100%);
+  color: #f4f8ff;
+}
+
+#game-canvas {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+}
+
+#speed-lines {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.45;
+  background:
+    repeating-linear-gradient(
+      100deg,
+      rgba(255, 255, 255, 0.0) 0,
+      rgba(255, 255, 255, 0.0) 12px,
+      rgba(255, 255, 255, 0.15) 12px,
+      rgba(255, 255, 255, 0.15) 15px
+    );
+  mask-image: linear-gradient(to top, transparent, rgba(0, 0, 0, 0.9) 30%, transparent 80%);
+  animation: streaks 0.8s linear infinite;
+}
+
+@keyframes streaks {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-80px);
+  }
+}
+
+#hud {
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 8;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.score-pill,
+.audio-controls {
+  background: rgba(17, 13, 22, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  padding: 8px 14px;
+  backdrop-filter: blur(7px);
+}
+
+.audio-controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.audio-controls input {
+  width: 110px;
+}
+
+.audio-controls button,
+.panel button {
+  background: linear-gradient(135deg, #ffd84d, #ff5a7f);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 12;
+  background: rgba(0, 0, 0, 0.38);
+}
+
+.overlay.visible {
+  display: flex;
+}
+
+.panel {
+  width: min(92vw, 440px);
+  background: rgba(8, 12, 20, 0.86);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 18px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 15px 70px rgba(0, 0, 0, 0.45);
+}
+
+.panel h1,
+.panel h2 {
+  margin: 0 0 12px;
+}
+
+.controls {
+  opacity: 0.95;
+}
