@@ -10,7 +10,7 @@ A complete Three.js endless runner inspired by classic 3-lane subway gameplay me
    python3 -m http.server 5173
    ```
 3. Open your browser at:
-   `http://localhost:5173/subway-runner/`
+   `http://localhost:5173/`
 
 ## Controls
 
